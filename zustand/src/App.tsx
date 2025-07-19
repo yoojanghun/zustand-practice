@@ -5,6 +5,7 @@ function App() {
 
   const count = useCounterStore((state) => state.count);
   const increment = useCounterStore((state) => state.increment);
+  const incrementAsync = useCounterStore((state) => state.incrementAsync);
   const decrement = useCounterStore((state) => state.decrement);
 
   return (
@@ -12,6 +13,7 @@ function App() {
       {count}
       <div>
         <div onClick={increment}>Increment</div>
+        <div onClick={incrementAsync}>Increment Async</div>
         <div onClick={decrement}>Decrement</div>
       </div>
     </div>
