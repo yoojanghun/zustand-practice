@@ -2,9 +2,8 @@ import { useEffect } from 'react';
 import './App.css'
 import { useCounterStore } from './store'
 
-const logCount = () => {
-  const count = useCounterStore.getState().count;
-  console.log("count", count);
+const setCount = () => {
+  useCounterStore.setState({ count: 1 });
 }
 
 function App() {
@@ -14,7 +13,7 @@ function App() {
   const decrement = useCounterStore((state) => state.decrement);
 
   useEffect(() => {
-    logCount();
+    setCount();
   }, []);
 
   return (
@@ -34,6 +33,6 @@ export default App
 // useCounterStore((state) => state.count)
 // 값이 바뀌면 컴포넌트가 자동으로 리렌더링됨.
 
-// useCounterStore.getState()
-// 현재 상태를 조회
-// 함수형 컴포넌트 밖에서 값을 가져오고 싶을 때 사용.
+// useCounterStore.setState()
+// 상태 업데이트 함수
+// 함수형 컴포넌트 밖에서 값을 업데이트하고 싶을 때 사용.
